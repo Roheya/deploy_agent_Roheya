@@ -4,7 +4,7 @@ mkdir -p attendance_tracker_v1
 cd attendance_tracker_v1
 
 # creating attendance_checker.py file
-vi attendance_checker.py
+touch  attendance_checker.py
 
 # Create Helpers and reports folders
 mkdir -p Helpers
@@ -12,13 +12,16 @@ mkdir -p reports
 
 # creating assets.csv and config.json files
 cd Helpers
-vi assets.csv
-vi config.json
+touch assets.csv
+echo '{
+  "warning": 75,
+  "failure": 50
+}' > "config.json"
 
 # creating reports.log
 cd -
 cd reports
-vi reports.log
+touch reports.log
 
 #2. Dynamic Configuration (Stream Editing)
 # deciding if I want  to update the attendance thresholds
@@ -55,22 +58,3 @@ else
         echo "Warning: Application directory missing: $project_directory"
 fi
 
-# 3. Process Management (The Trap)
-project_directory="/root/deploy_agent_Roheya/attendance_tracker_v1"
-archive_name="attendance_tracker_v1_archive"
-
-# Trap SIGINT (Ctrl+C) and call the handler
-trap 'handle_user_interrupt' SIGINT
-
-# creating attendance_tracker_v1_archive and removing the incomplete directory
-handle_user_interrupt() {
-        echo "Interrupt detected!"
-        tar -cf "$archive_name" "$project_directory"
-        echo "Archive created: $archive_name"
-        rm -rf "$project_directory"
-        echo "Incomplete project directory removed"
-        echo "Cleanup complete. Exiting"
-        exit
-}
-
-sleep 30
