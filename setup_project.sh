@@ -54,3 +54,23 @@ if [ -d "$project_directory" ];then
 else
         echo "Warning: Application directory missing: $project_directory"
 fi
+
+# 3. Process Management (The Trap)
+project_directory="/root/deploy_agent_Roheya/attendance_tracker_v1"
+archive_name="attendance_tracker_v1_archive"
+
+# Trap SIGINT (Ctrl+C) and call the handler
+trap 'handle_user_interrupt' SIGINT
+
+# creating attendance_tracker_v1_archive and removing the incomplete directory
+handle_user_interrupt() {
+        echo "Interrupt detected!"
+        tar -cf "$archive_name" "$project_directory"
+        echo "Archive created: $archive_name"
+        rm -rf "$project_directory"
+        echo "Incomplete project directory removed"
+        echo "Cleanup complete. Exiting"
+        exit
+}
+
+sleep 30
