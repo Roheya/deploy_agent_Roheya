@@ -39,3 +39,18 @@ else
     echo "no changes"
 fi
 
+# 4. Environment Validation
+# Verify python3 installation
+version=$(python3 --version 2>/dev/null)
+if [ -n "$version" ]; then
+        echo "Success: Python3 is installed ($version)"
+else
+        echo "Warning: Python3 is not installed."
+fi
+# Verify application directory structure
+project_directory="/root/deploy_agent_Roheya/attendance_tracker_v1"
+if [ -d "$project_directory" ];then
+        echo "Success: Application directory exists at $project_directory"
+else
+        echo "Warning: Application directory missing: $project_directory"
+fi
