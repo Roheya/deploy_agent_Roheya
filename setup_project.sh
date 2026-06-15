@@ -28,7 +28,7 @@ else
        echo "Created project directory: $project_directory"
     else
          echo "Error: Could not create project directory."
-
+         exit
     fi
 fi    
 cd "$project_directory"
@@ -39,7 +39,6 @@ touch  attendance_checker.py
 # Create Helpers and reports folders
 mkdir -p Helpers
 mkdir -p reports
-
 # creating assets.csv and config.json files
 cd Helpers
 touch assets.csv
