@@ -23,9 +23,14 @@ sleep 10
 if [ -d "$project_directory" ]; then
     echo "Directory $project_directory already exists" 
 else
-    mkdir -p "$project_directory"
-     echo "Created project directory: $project_directory"
-fi
+    
+    if mkdir -p "$project_directory"; then 
+       echo "Created project directory: $project_directory"
+    else
+         echo "Error: Could not create project directory."
+
+    fi
+fi    
 cd "$project_directory"
 
 # creating attendance_checker.py file
