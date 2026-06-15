@@ -11,7 +11,7 @@ Follow these instructions to setup and run the project:
 
 What happens when you run the script?
 The script pauses for 10 seconds (sleep 10) to allow you to test the trap.
-During this pause, pressing Ctrl+C sends a SIGINT signal, which triggers the archive feature.]
+During this pause, pressing Ctrl+C sends a SIGINT signal, which triggers the archive feature.
 
 If interrupted before 10 seconds (Ctrl+C):
 1. It creates an archive (attendance_tracker_v1_archive) of the project directory,hence ctrl+c triggers the creation of the archive.
