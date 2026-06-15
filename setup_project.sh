@@ -31,14 +31,14 @@ else
          exit
     fi
 fi    
-cd "$project_directory"
+cd "$project_directory" || { echo "Error: Cannot enter project directory."; exit; }
 
 # creating attendance_checker.py file
-touch  attendance_checker.py
+touch  attendance_checker.py || { echo "Error: cannot create attendance_checker.py"; exit; }
 
 # Create Helpers and reports folders
-mkdir -p Helpers
-mkdir -p reports
+mkdir -p Helpers || { echo "Error: canot create Helpers directory"; exit; }
+mkdir -p reports || { echo "Error cannot create reports directory"; exit; }
 # creating assets.csv and config.json files
 cd Helpers
 touch assets.csv
