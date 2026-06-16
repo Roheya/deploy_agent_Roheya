@@ -86,7 +86,7 @@ fi
 
 # 4. Environment Validation
 # Verify python3 installation
-version=$(python3 --version 2>/dev/null)
+version=$(python3 --version)
 if [ -n "$version" ]; then
         echo "Success: Python3 is installed ($version)"
 else
