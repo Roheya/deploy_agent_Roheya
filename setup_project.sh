@@ -24,7 +24,7 @@ if [ -d "$project_directory" ]; then
     echo "Directory $project_directory already exists" 
 else
     
-    if mkdir -p "$project_directory"; then 
+    if mkdir  "$project_directory"; then 
        echo "Created project directory: $project_directory"
     else
          echo "Error: Could not create project directory."
