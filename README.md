@@ -25,4 +25,5 @@ If not interrupted (after 10 seconds):
 4. Validates Python3 installation and directory existence.
 
 
-
+LINK TO MY VIDEO:
+https://drive.google.com/file/d/1Dq1KRr2OljBYpuHoC-tgltOI4xqJYdQm/view?usp=drive_link
