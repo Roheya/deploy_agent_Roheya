@@ -19,7 +19,7 @@ handle_user_interrupt() {
 
 sleep 10
 
-# 1. Directory Architecture
+# # 1. Directory Architecture
 if [ -d "$project_directory" ]; then
     echo "Directory $project_directory already exists" 
 else
